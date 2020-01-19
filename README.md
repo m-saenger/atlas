@@ -1,6 +1,15 @@
 
-## Idea
-Plot project map in R which covers the full paper size. Ideal for printing (PDF).
+## Goal
+Plot a projected map in R which fully covers a given paper size. Ideal for printing (PDF). Not a package nor a minimal example, but the code should explain the essential steps.
+
+Steps:  
+* Input: geometry in lat-long coordinates
+* Project convex hull of geometry to new projection (e. g. Lambert azimuthal)
+* Get projected extent
+* Calculate inner paper size (substract margins and spacing for title, axis, etc.)
+* Adjust extent to target paper size
+* Plot projected data for adjusted extent
+* Modify plot grobs to set exact dimensions for title, caption and axis
 
 ## Example 1: A4 Portrait with title, caption and axis 
 
@@ -10,11 +19,13 @@ Plot project map in R which covers the full paper size. Ideal for printing (PDF)
 
 ![](https://myweather.ch/media/test2.png)
 
-Dependecies: 
-fct.R
-lib.R
+Dependecies:   
+https://github.com/m-saenger/atlas/blob/master/lib.R  
+https://github.com/m-saenger/atlas/blob/master/fct.R  
 
 ## Example code
+
+See also: https://github.com/m-saenger/atlas/blob/master/demo_git.R
 
 ``` r
 suppressPackageStartupMessages({
